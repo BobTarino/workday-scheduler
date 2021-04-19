@@ -7,19 +7,16 @@ $("#currentDay").append(todayDate.toString());
 // page is in state of "readiness" and can be manipulated safely
 $(document).ready(function () {
 
-    // save task to local storage
+    // save task to localStorage
     $(".saveBtn").on("click", function () {
-
         var text = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
-
 
         localStorage.setItem(time, text);
 
     });
 
-
-    function timeTracker() {
+    function timeManage() {
         //current time
         var currentState = moment().hours();
 
@@ -58,6 +55,6 @@ $(document).ready(function () {
     $("#hour-16 .description").val(localStorage.getItem("hour-16"));
     $("#hour-17 .description").val(localStorage.getItem("hour-17"));
 
-    timeTracker();
+    timeManage();
 })
 
